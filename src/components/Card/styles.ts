@@ -9,6 +9,16 @@ export const Container = styled.div`
   align-items: center;
   flex-direction: column;
   position: relative;
+
+  .delete {
+    svg {
+      width: 2.8rem;
+      position: absolute;
+      top: 0;
+      right: 0.1rem;
+      height: auto;
+    }
+  }
 `
 
 export const ProductTitle = styled.p`

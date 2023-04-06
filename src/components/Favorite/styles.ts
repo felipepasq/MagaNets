@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
+interface ContainerProps {
+  isFavorite: boolean
+}
+
+export const Container = styled.div<ContainerProps>`
   position: absolute;
   top: -0.7rem;
   left: -0.4rem;
@@ -18,7 +22,8 @@ export const Container = styled.div`
     top: 0;
     left: 1.2rem;
     path {
-      fill: ${({ theme }) => theme.colors.white};
+      fill: ${({ theme, isFavorite }) =>
+        isFavorite ? theme.colors.red : theme.colors.white};
     }
   }
 `

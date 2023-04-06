@@ -1,8 +1,10 @@
 import { createBrowserRouter, Outlet } from 'react-router-dom'
+import { Wrapper } from './components/Wrapper/styles'
 import Header from './components/Header'
 import Home from './pages/Home'
 import BreadCrumbs from './components/BreadCrumbs'
-import { Wrapper } from './components/Wrapper/styles'
+import WishList from './pages/WishList'
+
 const pathMap = {
   home: 'Home',
   wishlist: 'Lista de desejos'
@@ -30,7 +32,7 @@ export const router = createBrowserRouter([
         index: true,
         element: <Home />
       },
-      { path: 'wishlist', element: <h1>WishList</h1> }
+      { path: 'wishlist', element: <WishList /> }
     ]
   }
 ])
