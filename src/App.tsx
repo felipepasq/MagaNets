@@ -7,7 +7,6 @@ function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
-      <h1>Header</h1>
       <RouterProvider router={router} />
     </ThemeProvider>
   )
