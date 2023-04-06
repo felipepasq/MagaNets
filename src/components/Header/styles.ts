@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
-export const Wrapper = styled.div`
+export const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.primary};
 `
 
-export const Container = styled.header`
+export const Header = styled.header`
   width: 100%;
   margin: 0 auto;
   max-width: 136.6rem;
@@ -15,7 +15,7 @@ export const Container = styled.header`
   padding: 2rem 0;
   @media (min-width: 768px) {
     flex-direction: row;
-    gap: 40px;
+    gap: 4rem;
     align-items: unset;
     padding: 4rem 2rem 0;
   }

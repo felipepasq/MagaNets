@@ -2,7 +2,7 @@ import { createBrowserRouter, Outlet } from 'react-router-dom'
 import Header from './components/Header'
 import Home from './pages/Home'
 import BreadCrumbs from './components/BreadCrumbs'
-
+import { Wrapper } from './components/Wrapper/styles'
 const pathMap = {
   home: 'Home',
   wishlist: 'Lista de desejos'
@@ -12,8 +12,10 @@ const Layout = () => {
   return (
     <>
       <Header />
-      <BreadCrumbs pathMap={pathMap} />
-      <Outlet />
+      <Wrapper>
+        <BreadCrumbs pathMap={pathMap} />
+        <Outlet />
+      </Wrapper>
     </>
   )
 }

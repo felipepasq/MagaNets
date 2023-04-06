@@ -26,9 +26,12 @@ const links = [
 
 const Header: React.FC = () => {
   return (
-    <S.Wrapper>
-      <S.Container>
-        <S.Logo>MagaNets</S.Logo>
+    <S.Container>
+      <S.Header>
+        <S.Logo>
+          <Link to="/">MagaNets</Link>
+        </S.Logo>
+
         <S.SearchContainer>
           <S.LinksContainer>
             {links.length > 0
@@ -46,8 +49,8 @@ const Header: React.FC = () => {
           </S.LinksContainer>
           <SearchBar />
         </S.SearchContainer>
-      </S.Container>
-    </S.Wrapper>
+      </S.Header>
+    </S.Container>
   )
 }
 
