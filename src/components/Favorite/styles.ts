@@ -4,6 +4,7 @@ export const Container = styled.div`
   position: absolute;
   top: -0.7rem;
   left: -0.4rem;
+  cursor: pointer;
   svg:first-of-type {
     transform: rotateX(180deg);
     width: 4.5rem;

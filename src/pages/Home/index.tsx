@@ -13,7 +13,7 @@ const Home: React.FC = () => {
       ) : (
         <CardList>
           {products.map((product) => {
-            return <Card key={product.id} />
+            return <Card key={product.id} product={product} />
           })}
         </CardList>
       )}
