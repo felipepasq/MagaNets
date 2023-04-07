@@ -44,7 +44,7 @@ export const FavoritesContextProvider = ({
   const removeFavorite = (productId: number) => {
     const updatedFavorites = favorites
 
-    const filteredFavorites = favorites.filter(
+    const filteredFavorites = updatedFavorites.filter(
       (favorite) => favorite.id !== productId
     )
 

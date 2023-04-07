@@ -4,7 +4,6 @@ import Location from '../../svg/Location'
 import Telephone from '../../svg/Telephone'
 import SearchBar from '../SearchBar'
 import * as S from './styles'
-import { useSearch } from '../../context/SearchContext/SearchContext'
 import { Link } from 'react-router-dom'
 
 const links = [
