@@ -37,7 +37,6 @@ export const FavoritesContextProvider = ({
       '@Maganets:favorites',
       JSON.stringify([...favorites, product])
     )
-    console.log(product)
 
     setFavorites([...favorites, product])
   }
