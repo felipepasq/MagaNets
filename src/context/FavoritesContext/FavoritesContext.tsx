@@ -6,7 +6,7 @@ import React, {
   useMemo,
   useEffect
 } from 'react'
-import { Product } from '../types'
+import { Product } from '../../types'
 
 type FavoritesContextProviderProps = {
   children: ReactNode
@@ -45,7 +45,7 @@ export const FavoritesContextProvider = ({
   const removeFavorite = (productId: number) => {
     const updatedFavorites = favorites
 
-    const filteredFavorites = updatedFavorites.filter(
+    const filteredFavorites = favorites.filter(
       (favorite) => favorite.id !== productId
     )
 

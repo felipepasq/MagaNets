@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { api } from '../services/api'
-import { Product } from '../types'
+import { api } from '../../services/api'
+import { Product } from '../../types'
 const useProducts = () => {
   const [products, setProducts] = useState<Product[]>([])
   const [isLoading, setIsLoading] = useState(true)

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSearch } from '../../context/SearchContext'
+import { useSearch } from '../../context/SearchContext/SearchContext'
 import Search from '../../svg/Search'
 
 import * as S from './styles'

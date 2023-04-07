@@ -6,7 +6,7 @@ import React, {
   useMemo,
   useEffect
 } from 'react'
-import { Product } from '../types'
+import { Product } from '../../types'
 
 type SearchContextProviderProps = {
   children: ReactNode

@@ -3,8 +3,8 @@ import { router } from './Router'
 import { ThemeProvider } from 'styled-components'
 import { defaultTheme } from './styles/themes/default'
 import GlobalStyle from './styles/global'
-import { FavoritesContextProvider } from './context/FavoritesContext'
-import { SearchContextProvider } from './context/SearchContext'
+import { FavoritesContextProvider } from './context/FavoritesContext/FavoritesContext'
+import { SearchContextProvider } from './context/SearchContext/SearchContext'
 function App() {
   return (
     <ThemeProvider theme={defaultTheme}>

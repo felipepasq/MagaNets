@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { CardList } from '../../components/CardList/styles'
 import Card from '../../components/Card'
-import { useFavorites } from '../../context/FavoritesContext'
-import { useSearch } from '../../context/SearchContext'
+import { useFavorites } from '../../context/FavoritesContext/FavoritesContext'
+import { useSearch } from '../../context/SearchContext/SearchContext'
 import { removeAccents } from '../../utils/removeAccents'
 
 const WishList: React.FC = () => {
@@ -29,7 +29,7 @@ const WishList: React.FC = () => {
 
   return (
     <>
-      {favorites.length === 0 ? null : (
+      {favorites?.length === 0 ? null : (
         <CardList>
           {search.length > 0 ? (
             filteredFavorites.length > 0 ? (
@@ -40,7 +40,7 @@ const WishList: React.FC = () => {
               <h1>Sem resultados</h1>
             )
           ) : (
-            favorites.map((favorite) => {
+            favorites?.map((favorite) => {
               return <Card product={favorite} key={favorite.id} />
             })
           )}

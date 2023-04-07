@@ -2,9 +2,9 @@ import React, { useEffect } from 'react'
 import Card from '../../components/Card'
 import { CardList } from '../../components/CardList/styles'
 import { Loader } from '../../components/Loader/styles'
-import useProducts from '../../hooks/useProducts'
+import useProducts from '../../hooks/useProducts/useProducts'
 import { removeAccents } from '../../utils/removeAccents'
-import { useSearch } from '../../context/SearchContext'
+import { useSearch } from '../../context/SearchContext/SearchContext'
 
 const Home: React.FC = () => {
   const { products, isLoading } = useProducts()
