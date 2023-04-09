@@ -1,27 +1,16 @@
 import React, { useEffect } from 'react'
 import { CardList } from '../../components/CardList/styles'
 import Card from '../../components/Card'
+import { NotFound } from '../../components/NotFound/styles'
 import { useFavorites } from '../../context/FavoritesContext/FavoritesContext'
 import { useSearch } from '../../context/SearchContext/SearchContext'
-import { removeAccents } from '../../utils/removeAccents'
+import { handleSearch } from '../../utils/handleSearch'
 
 const WishList: React.FC = () => {
   const { favorites } = useFavorites()
   const { search, setSearch } = useSearch()
 
-  const handleSearch = () => {
-    const itemsFound =
-      search.length > 0
-        ? favorites.filter((favorite) =>
-            removeAccents(favorite.title.toLowerCase()).includes(
-              removeAccents(search.toLowerCase())
-            )
-          )
-        : []
-    return itemsFound
-  }
-
-  const filteredFavorites = handleSearch()
+  const filteredFavorites = handleSearch(search, favorites)
 
   useEffect(() => {
     setSearch('')
@@ -29,7 +18,11 @@ const WishList: React.FC = () => {
 
   return (
     <>
-      {favorites?.length === 0 ? null : (
+      {favorites?.length === 0 ? (
+        <NotFound>
+          Você não adicionou nenhum produto na sua lista de desejos
+        </NotFound>
+      ) : (
         <CardList>
           {search.length > 0 ? (
             filteredFavorites.length > 0 ? (
@@ -37,7 +30,7 @@ const WishList: React.FC = () => {
                 return <Card product={favorite} key={favorite.id} />
               })
             ) : (
-              <h1>Sem resultados</h1>
+              <NotFound>Nenhum resultado encontrado</NotFound>
             )
           ) : (
             favorites?.map((favorite) => {

@@ -25,19 +25,4 @@ describe('useProducts', () => {
     expect(result.current.isLoading).toBe(false)
     expect(result.current.products).toEqual(mockProducts)
   })
-
-  // it('should handle errors', async () => {
-  //   const mockError = new Error('API is down')
-  //   api.getAllProducts.mockRejectedValueOnce(mockError)
-
-  //   const { result, waitForNextUpdate } = renderHook(() => useProducts())
-
-  //   expect(result.current.isLoading).toBe(true)
-  //   expect(result.current.products).toEqual([])
-
-  //   await waitForNextUpdate()
-
-  //   expect(result.current.isLoading).toBe(false)
-  //   expect(result.current.products).toEqual([]) // Verify that products state is still empty
-  // })
 })

@@ -2,9 +2,10 @@ import React, { useEffect } from 'react'
 import Card from '../../components/Card'
 import { CardList } from '../../components/CardList/styles'
 import { Loader } from '../../components/Loader/styles'
-import useProducts from '../../hooks/useProducts/useProducts'
-import { removeAccents } from '../../utils/removeAccents'
+import { NotFound } from '../../components/NotFound/styles'
 import { useSearch } from '../../context/SearchContext/SearchContext'
+import { handleSearch } from '../../utils/handleSearch'
+import useProducts from '../../hooks/useProducts/useProducts'
 
 const Home: React.FC = () => {
   const { products, isLoading } = useProducts()
@@ -14,19 +15,7 @@ const Home: React.FC = () => {
     setSearch('')
   }, [])
 
-  const handleSearch = () => {
-    const itemsFound =
-      search.length > 0
-        ? products.filter((product) =>
-            removeAccents(product.title.toLowerCase()).includes(
-              removeAccents(search.toLowerCase())
-            )
-          )
-        : []
-    return itemsFound
-  }
-
-  const filteredProducts = handleSearch()
+  const filteredProducts = handleSearch(search, products)
 
   return (
     <>
@@ -40,7 +29,7 @@ const Home: React.FC = () => {
                 return <Card product={product} key={product.id} />
               })
             ) : (
-              <h1>Sem resultados</h1>
+              <NotFound>Nenhum resultado encontrado</NotFound>
             )
           ) : (
             products.map((product) => {
