@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">77.77% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/13</span>
+                <span class='fraction'>7/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">16.66% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>1/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>2/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">77.77% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/13</span>
+                <span class='fraction'>7/9</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -109,43 +109,29 @@
 <a name='L44'></a><a href='#L44'>44</a>
 <a name='L45'></a><a href='#L45'>45</a>
 <a name='L46'></a><a href='#L46'>46</a>
-<a name='L47'></a><a href='#L47'>47</a>
-<a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a>
-<a name='L50'></a><a href='#L50'>50</a>
-<a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L47'></a><a href='#L47'>47</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -172,46 +158,39 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useEffect } from 'react'
 import { CardList } from '../../components/CardList/styles'
 import Card from '../../components/Card'
-import { useFavorites } from '../../context/FavoritesContext'
-import { useSearch } from '../../context/SearchContext'
-import { removeAccents } from '../../utils/removeAccents'
+import { NotFound } from '../../components/NotFound/styles'
+import { useFavorites } from '../../context/FavoritesContext/FavoritesContext'
+import { useSearch } from '../../context/SearchContext/SearchContext'
+import { handleSearch } from '../../utils/handleSearch'
 &nbsp;
-const WishList: React.FC = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-  const { favorites } = <span class="cstat-no" title="statement not covered" >useFavorites()</span>
-  const { search, setSearch } = <span class="cstat-no" title="statement not covered" >useSearch()</span>
+const WishList: React.FC = () =&gt; {
+  const { favorites } = useFavorites()
+  const { search, setSearch } = useSearch()
 &nbsp;
-  const handleSearch = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-    const itemsFound =
-<span class="cstat-no" title="statement not covered" >      search.length &gt; 0</span>
-        ? favorites.filter(<span class="fstat-no" title="function not covered" >(f</span>avorite) =&gt;
-<span class="cstat-no" title="statement not covered" >            removeAccents(favorite.title.toLowerCase()).includes(</span>
-              removeAccents(search.toLowerCase())
-            )
-          )
-        : []
-<span class="cstat-no" title="statement not covered" >    return itemsFound</span>
-  }
+  const filteredFavorites = handleSearch(search, favorites)
 &nbsp;
-  const filteredFavorites = <span class="cstat-no" title="statement not covered" >handleSearch()</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >  useEffect(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    setSearch('')</span>
+  useEffect(() =&gt; {
+    setSearch('')
   }, [])
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return (</span>
+  return (
     &lt;&gt;
-      {favorites.length === 0 ? null : (
-        &lt;CardList&gt;
+      {favorites?.length === 0 ? (
+        &lt;NotFound&gt;
+          Você não adicionou nenhum produto na sua lista de desejos
+        &lt;/NotFound&gt;
+      ) : (
+<span class="branch-1 cbranch-no" title="branch not covered" >        &lt;CardList&gt;</span>
           {search.length &gt; 0 ? (
             filteredFavorites.length &gt; 0 ? (
               filteredFavorites.map(<span class="fstat-no" title="function not covered" >(f</span>avorite) =&gt; {
 <span class="cstat-no" title="statement not covered" >                return &lt;Card product={favorite} key={favorite.id} /&gt;</span>
               })
             ) : (
-              &lt;h1&gt;Sem resultados&lt;/h1&gt;
+              &lt;NotFound&gt;Nenhum resultado encontrado&lt;/NotFound&gt;
             )
           ) : (
-            favorites.map(<span class="fstat-no" title="function not covered" >(f</span>avorite) =&gt; {
+            favorites?.map(<span class="fstat-no" title="function not covered" >(f</span>avorite) =&gt; {
 <span class="cstat-no" title="statement not covered" >              return &lt;Card product={favorite} key={favorite.id} /&gt;</span>
             })
           )}
@@ -229,7 +208,7 @@ export default WishList
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-04-06T23:36:28.834Z
+                at 2023-04-09T23:47:04.520Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

@@ -8,7 +8,7 @@ const productMock = {
   price: 1234.56
 }
 
-describe('Card', () => {
+describe('Card component', () => {
   it('should render the product title and price', () => {
     render(<Card product={productMock} />)
     const productTitle = screen.getByText(/Product 1/i)

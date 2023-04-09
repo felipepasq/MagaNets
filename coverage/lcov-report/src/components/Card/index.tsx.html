@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>8/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>2/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>1/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">88.88% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/9</span>
+                <span class='fraction'>8/9</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -118,20 +118,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -155,29 +155,29 @@ import Favorite from '../Favorite'
 import Delete from '../../svg/Delete'
 import { formatMoney } from '../../utils/formatMoney'
 import { Product } from '../../types'
-import { useFavorites } from '../../context/FavoritesContext'
+import { useFavorites } from '../../context/FavoritesContext/FavoritesContext'
 import { useLocation } from 'react-router-dom'
 interface Props {
   product: Product
 }
 &nbsp;
-const Card: React.FC&lt;Props&gt; = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >({</span> product }) =&gt; {</span>
-  const { price, id, title } = <span class="cstat-no" title="statement not covered" >product</span>
-  const { pathname } = <span class="cstat-no" title="statement not covered" >useLocation()</span>
-  const { favorites, addToFavorites, removeFavorite } = <span class="cstat-no" title="statement not covered" >useFavorites()</span>
-  const isFavorite = <span class="cstat-no" title="statement not covered" >favorites.find(<span class="fstat-no" title="function not covered" >(f</span>avorite) =&gt; <span class="cstat-no" title="statement not covered" >favorite.id === id)</span></span>
-    ? true
+const Card: React.FC&lt;Props&gt; = ({ product }) =&gt; {
+  const { price, id, title } = product
+  const { pathname } = useLocation()
+  const { favorites, addToFavorites, removeFavorite } = useFavorites()
+  const isFavorite = favorites?.find(<span class="fstat-no" title="function not covered" >(f</span>avorite) =&gt; <span class="cstat-no" title="statement not covered" >favorite.id === id)</span>
+    ? <span class="branch-0 cbranch-no" title="branch not covered" >true</span>
     : false
-  const isWishListPage = <span class="cstat-no" title="statement not covered" >pathname.includes('wishlist')</span>
+  const isWishListPage = pathname.includes('wishlist')
 &nbsp;
-  const handleClick = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+  const handleClick = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
 <span class="cstat-no" title="statement not covered" >    isFavorite ? removeFavorite(id) : addToFavorites(product)</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return (</span>
+  return (
     &lt;S.Container&gt;
       {isWishListPage ? (
-        &lt;button onClick={handleClick} className="delete"&gt;
+<span class="branch-0 cbranch-no" title="branch not covered" >        &lt;button onClick={handleClick} className="delete"&gt;</span>
           &lt;Delete /&gt;
         &lt;/button&gt;
       ) : (
@@ -199,7 +199,7 @@ export default Card
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-04-06T23:36:28.834Z
+                at 2023-04-09T23:47:04.520Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

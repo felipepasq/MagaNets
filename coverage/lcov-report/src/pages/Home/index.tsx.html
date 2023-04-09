@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">77.77% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/13</span>
+                <span class='fraction'>7/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">16.66% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>1/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>2/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">77.77% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/13</span>
+                <span class='fraction'>7/9</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -108,18 +108,7 @@
 <a name='L43'></a><a href='#L43'>43</a>
 <a name='L44'></a><a href='#L44'>44</a>
 <a name='L45'></a><a href='#L45'>45</a>
-<a name='L46'></a><a href='#L46'>46</a>
-<a name='L47'></a><a href='#L47'>47</a>
-<a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a>
-<a name='L50'></a><a href='#L50'>50</a>
-<a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L46'></a><a href='#L46'>46</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -127,29 +116,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -179,45 +157,34 @@
 import Card from '../../components/Card'
 import { CardList } from '../../components/CardList/styles'
 import { Loader } from '../../components/Loader/styles'
-import useProducts from '../../hooks/useProducts'
-import { removeAccents } from '../../utils/removeAccents'
-import { useSearch } from '../../context/SearchContext'
+import { NotFound } from '../../components/NotFound/styles'
+import { useSearch } from '../../context/SearchContext/SearchContext'
+import { handleSearch } from '../../utils/handleSearch'
+import useProducts from '../../hooks/useProducts/useProducts'
 &nbsp;
-const Home: React.FC = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-  const { products, isLoading } = <span class="cstat-no" title="statement not covered" >useProducts()</span>
-  const { search, setSearch } = <span class="cstat-no" title="statement not covered" >useSearch()</span>
+const Home: React.FC = () =&gt; {
+  const { products, isLoading } = useProducts()
+  const { search, setSearch } = useSearch()
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  useEffect(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    setSearch('')</span>
+  useEffect(() =&gt; {
+    setSearch('')
   }, [])
 &nbsp;
-  const handleSearch = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-    const itemsFound =
-<span class="cstat-no" title="statement not covered" >      search.length &gt; 0</span>
-        ? products.filter(<span class="fstat-no" title="function not covered" >(p</span>roduct) =&gt;
-<span class="cstat-no" title="statement not covered" >            removeAccents(product.title.toLowerCase()).includes(</span>
-              removeAccents(search.toLowerCase())
-            )
-          )
-        : []
-<span class="cstat-no" title="statement not covered" >    return itemsFound</span>
-  }
+  const filteredProducts = handleSearch(search, products)
 &nbsp;
-  const filteredProducts = <span class="cstat-no" title="statement not covered" >handleSearch()</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >  return (</span>
+  return (
     &lt;&gt;
       {isLoading ? (
         &lt;Loader /&gt;
       ) : (
-        &lt;CardList&gt;
+<span class="branch-1 cbranch-no" title="branch not covered" >        &lt;CardList&gt;</span>
           {search.length &gt; 0 ? (
             filteredProducts.length &gt; 0 ? (
               filteredProducts.map(<span class="fstat-no" title="function not covered" >(p</span>roduct) =&gt; {
 <span class="cstat-no" title="statement not covered" >                return &lt;Card product={product} key={product.id} /&gt;</span>
               })
             ) : (
-              &lt;h1&gt;Sem resultados&lt;/h1&gt;
+              &lt;NotFound&gt;Nenhum resultado encontrado&lt;/NotFound&gt;
             )
           ) : (
             products.map(<span class="fstat-no" title="function not covered" >(p</span>roduct) =&gt; {
@@ -238,7 +205,7 @@ export default Home
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-04-06T23:36:28.834Z
+                at 2023-04-09T23:47:04.520Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

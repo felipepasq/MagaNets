@@ -2,7 +2,7 @@ import { render } from 'test-utils'
 import { fireEvent } from '@testing-library/react'
 import Favorite from '.'
 
-describe('Favorite', () => {
+describe('Favorite component', () => {
   it('should call handleClick function', () => {
     const handleClick = jest.fn()
     const { container } = render(
