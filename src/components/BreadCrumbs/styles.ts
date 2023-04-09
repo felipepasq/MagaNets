@@ -8,6 +8,12 @@ export const Container = styled.div`
     font-size: 1.6rem;
     font-family: ${({ theme }) => theme.fonts.text};
     font-weight: 900;
+
+    :not(.arrow) {
+      :hover {
+        text-decoration: underline;
+      }
+    }
   }
 
   @media (min-width: 768px) {

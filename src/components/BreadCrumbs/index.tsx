@@ -23,10 +23,12 @@ const BreadCrumbs: React.FC<Props> = ({ pathMap }) => {
   const generateBreadCrumbs = () => {
     const generate = breadcrumbs.map((breadcrumb, index) => {
       return (
-        <Link to={breadcrumb.url} key={breadcrumb.title}>
+        <div key={breadcrumb.title}>
           {index !== 0 ? <span className="arrow"> {' > '} </span> : null}
-          <span>{breadcrumb.title}</span>
-        </Link>
+          <Link to={breadcrumb.url}>
+            <span>{breadcrumb.title}</span>
+          </Link>
+        </div>
       )
     })
 
