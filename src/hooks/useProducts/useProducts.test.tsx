@@ -2,7 +2,6 @@ import { renderHook } from '@testing-library/react-hooks'
 import useProducts from './useProducts'
 import { api } from '../../services/api'
 import { AxiosResponse } from 'axios'
-import { Product } from '../../types'
 jest.mock('../../services/api')
 
 interface ProductsResponse {
