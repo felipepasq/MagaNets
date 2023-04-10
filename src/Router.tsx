@@ -32,7 +32,7 @@ export const router = createBrowserRouter([
         index: true,
         element: <Home />
       },
-      { path: 'wishlist', element: <WishList /> }
+      { path: '/wishlist', element: <WishList /> }
     ]
   }
 ])
