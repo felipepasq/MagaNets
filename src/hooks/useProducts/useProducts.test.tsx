@@ -2,7 +2,12 @@ import { renderHook } from '@testing-library/react-hooks'
 import useProducts from './useProducts'
 import { api } from '../../services/api'
 import { AxiosResponse } from 'axios'
+import { Product } from '../../types'
 jest.mock('../../services/api')
+
+interface ProductsResponse {
+  products: Array<{ id: number; name: string }>
+}
 
 describe('useProducts', () => {
   it('should return the list of products and loading state', async () => {
@@ -13,7 +18,7 @@ describe('useProducts', () => {
     const mockedApi = api as jest.Mocked<typeof api>
     mockedApi.getAllProducts.mockResolvedValueOnce({
       data: { products: mockProducts }
-    } as AxiosResponse<any>)
+    } as AxiosResponse<ProductsResponse>)
 
     const { result, waitForNextUpdate } = renderHook(() => useProducts())
 
